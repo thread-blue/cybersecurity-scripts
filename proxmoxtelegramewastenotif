@@ -1,9 +1,9 @@
 #!/bin/bash
-# Usage: ./proxmox-telegram.sh "Your message here"
+# Script to send a Telegram message from Proxmox
 
-TOKEN="YOUR_BOT_TOKEN"
-CHAT_ID="YOUR_CHAT_ID"
-MESSAGE="$1"
+TOKEN="YOUR_BOT_TOKEN"    # Replace with your bot token
+CHAT_ID="YOUR_CHAT_ID"    # Replace with your chat ID
+MESSAGE="$1"              # The message you pass when calling the script
 
 curl -s -X POST "https://api.telegram.org/bot${TOKEN}/sendMessage" \
      -d chat_id="${CHAT_ID}" \
